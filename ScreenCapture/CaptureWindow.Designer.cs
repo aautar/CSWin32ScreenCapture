@@ -1,6 +1,6 @@
 namespace ScreenCapture
 {
-    partial class Form1
+    partial class CaptureWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -29,45 +29,44 @@ namespace ScreenCapture
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.capTimer = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.captureFrame = new System.Windows.Forms.Panel();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(745, 452);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // capTimer
             // 
             this.capTimer.Enabled = true;
-            this.capTimer.Interval = 500;
+            this.capTimer.Interval = 150;
             this.capTimer.Tick += new System.EventHandler(this.capTimer_Tick);
             // 
-            // Form1
+            // captureFrame
+            // 
+            this.captureFrame.BackColor = System.Drawing.Color.Transparent;
+            this.captureFrame.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.captureFrame.Location = new System.Drawing.Point(0, 0);
+            this.captureFrame.Name = "captureFrame";
+            this.captureFrame.Size = new System.Drawing.Size(745, 452);
+            this.captureFrame.TabIndex = 0;
+            // 
+            // CaptureWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Lime;
             this.ClientSize = new System.Drawing.Size(745, 452);
-            this.Controls.Add(this.pictureBox1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Controls.Add(this.captureFrame);
+            this.DoubleBuffered = true;
+            this.Name = "CaptureWindow";
+            this.Text = "Capture Window";
+            this.TransparencyKey = System.Drawing.Color.Lime;
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer capTimer;
+        private System.Windows.Forms.Panel captureFrame;
     }
 }
 
